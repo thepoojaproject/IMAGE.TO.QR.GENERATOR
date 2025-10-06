@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Image to QR Generator</title>
+<title></title>
 <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
 <style>
   body {
@@ -83,7 +83,7 @@
 </head>
 <body>
 
-<h1>Image to QR Generator</h1>
+<h1></h1>
 
 <label class="upload-box" id="uploadBox">
   Drag & Drop or Click to Upload
