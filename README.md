@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,365 +12,350 @@
             --secondary: #7209b7;
             --light: #f8f9fa;
             --dark: #212529;
+            --gray: #6c757d;
             --success: #4cc9f0;
             --error: #f72585;
-            --gray: #6c757d;
-            --border-radius: 12px;
-            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            --transition: all 0.3s ease;
         }
-
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
-            background: #000000;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             color: var(--dark);
             padding: 20px;
-            line-height: 1.6;
         }
-
+        
         .container {
             max-width: 800px;
             width: 100%;
-            margin: 0 auto;
-            padding: 30px;
-            background: #ffffff;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            margin-top: 20px;
-            border: 1px solid #e0e0e0;
-        }
-
-        header {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-top: 30px;
             text-align: center;
-            margin-bottom: 30px;
         }
-
+        
         .logo {
             max-width: 300px;
-            margin: 0 auto 20px;
+            margin: 0 auto 15px;
             display: block;
         }
-
+        
         .subtitle {
-            color: #666;
+            color: var(--gray);
+            margin-bottom: 30px;
             font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto 20px;
         }
-
+        
         .upload-section {
             margin-bottom: 30px;
         }
-
+        
         .upload-box {
-            border: 2px dashed #ddd;
-            border-radius: var(--border-radius);
-            padding: 40px 20px;
+            border: 2px dashed #bdc3c7;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 400px;
+            height: 200px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            transition: var(--transition);
-            background: #f9f9f9;
+            margin: 0 auto 20px;
             text-align: center;
-            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            background: #f8f9fa;
             position: relative;
             overflow: hidden;
         }
-
+        
         .upload-box:hover {
             border-color: var(--primary);
-            background: #f0f4ff;
+            background: #edf2ff;
         }
-
+        
         .upload-box.active {
             border-color: var(--primary);
-            background: #f0f4ff;
+            background: #e8f4fe;
         }
-
+        
         .upload-icon {
             font-size: 48px;
-            margin-bottom: 15px;
             color: var(--primary);
+            margin-bottom: 15px;
+            line-height: 1;
         }
-
+        
         .upload-text {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            color: var(--dark);
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 5px;
         }
-
-        .upload-subtext {
-            font-size: 0.9rem;
-            color: #888;
+        
+        .upload-hint {
+            font-size: 0.85rem;
+            color: var(--gray);
         }
-
+        
         .file-info {
-            margin-top: 15px;
-            padding: 10px 15px;
-            background: rgba(67, 97, 238, 0.1);
-            border-radius: 8px;
+            margin-top: 10px;
             font-size: 0.9rem;
+            color: var(--primary);
             display: none;
-            color: #333;
-            border-left: 3px solid var(--primary);
         }
-
+        
         input[type="file"] {
             display: none;
         }
-
-        .button-group {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-
-        button {
+        
+        .btn {
             background: var(--primary);
             color: white;
             border: none;
             padding: 12px 24px;
-            border-radius: var(--border-radius);
+            border-radius: 8px;
             cursor: pointer;
             font-size: 1rem;
             font-weight: 600;
-            transition: var(--transition);
-            display: flex;
+            transition: all 0.3s ease;
+            display: inline-flex;
             align-items: center;
-            gap: 8px;
+            justify-content: center;
+            margin: 10px 5px;
+            box-shadow: 0 4px 6px rgba(67, 97, 238, 0.3);
         }
-
-        button:hover {
+        
+        .btn:hover {
             background: var(--primary-dark);
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 6px 8px rgba(67, 97, 238, 0.4);
         }
-
-        button:disabled {
-            background: #aaa;
+        
+        .btn:active {
+            transform: translateY(0);
+        }
+        
+        .btn:disabled {
+            background: var(--gray);
             cursor: not-allowed;
             transform: none;
             box-shadow: none;
         }
-
-        button.secondary {
-            background: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
+        
+        .btn-secondary {
+            background: var(--secondary);
+            box-shadow: 0 4px 6px rgba(114, 9, 183, 0.3);
         }
-
-        button.secondary:hover {
-            background: rgba(67, 97, 238, 0.1);
+        
+        .btn-secondary:hover {
+            background: #6511a0;
+            box-shadow: 0 6px 8px rgba(114, 9, 183, 0.4);
         }
-
+        
+        .btn-icon {
+            margin-right: 8px;
+        }
+        
         #qrContainer {
             margin-top: 30px;
             text-align: center;
             display: none;
         }
-
-        #qrContainer.active {
-            display: block;
-            animation: fadeIn 0.5s ease;
-        }
-
-        #qrCode {
+        
+        .qr-code {
             max-width: 250px;
-            border-radius: var(--border-radius);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
             margin: 0 auto 20px;
-            display: block;
-            padding: 15px;
-            background: white;
+            border: 8px solid white;
         }
-
-        .qr-info {
-            margin-top: 20px;
-            padding: 15px;
-            background: #f9f9f9;
-            border-radius: var(--border-radius);
-            font-size: 0.9rem;
-            text-align: left;
-            max-width: 500px;
-            margin: 20px auto;
-            color: #333;
-            border: 1px solid #e0e0e0;
+        
+        .image-preview {
+            max-width: 200px;
+            max-height: 150px;
+            border-radius: 8px;
+            margin: 15px auto;
+            display: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
-
-        .qr-info a {
-            color: var(--primary);
-            text-decoration: none;
-            word-break: break-all;
-        }
-
-        .qr-info a:hover {
-            text-decoration: underline;
-        }
-
+        
         .loading {
             display: none;
-            text-align: center;
-            margin: 20px 0;
+            margin: 20px auto;
         }
-
-        .loading.active {
-            display: block;
-        }
-
+        
         .spinner {
-            border: 4px solid rgba(0, 0, 0, 0.1);
-            border-left-color: var(--primary);
-            border-radius: 50%;
             width: 40px;
             height: 40px;
+            border: 4px solid rgba(67, 97, 238, 0.2);
+            border-radius: 50%;
+            border-top-color: var(--primary);
             animation: spin 1s linear infinite;
-            margin: 0 auto 15px;
+            margin: 0 auto;
         }
-
-        .error {
-            display: none;
-            background: rgba(247, 37, 133, 0.1);
-            color: var(--error);
-            padding: 15px;
-            border-radius: var(--border-radius);
-            margin: 20px 0;
-            text-align: center;
-            border-left: 3px solid var(--error);
-        }
-
-        .error.active {
-            display: block;
-        }
-
-        .footer {
-            margin-top: 40px;
-            text-align: center;
-            color: #aaa;
-            font-size: 0.9rem;
-            padding: 20px;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
+        
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
-
+        
+        .message {
+            padding: 12px;
+            border-radius: 8px;
+            margin: 15px 0;
+            display: none;
+        }
+        
+        .success {
+            background: rgba(76, 201, 240, 0.2);
+            color: #0a7ea3;
+            border-left: 4px solid var(--success);
+        }
+        
+        .error {
+            background: rgba(247, 37, 133, 0.1);
+            color: var(--error);
+            border-left: 4px solid var(--error);
+        }
+        
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            font-size: 0.9rem;
+            color: var(--gray);
+            text-align: center;
+            border-top: 1px solid #e9ecef;
+            width: 100%;
+        }
+        
+        .instructions {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: left;
+        }
+        
+        .instructions h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .instructions ol {
+            padding-left: 20px;
+        }
+        
+        .instructions li {
+            margin-bottom: 8px;
+            color: var(--gray);
+        }
+        
         @media (max-width: 600px) {
             .container {
-                padding: 20px;
+                padding: 25px;
             }
             
             .logo {
                 max-width: 250px;
             }
             
-            .button-group {
-                flex-direction: column;
-                width: 100%;
+            .upload-box {
+                height: 180px;
             }
             
-            button {
+            .btn {
                 width: 100%;
-                justify-content: center;
+                margin: 5px 0;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <img src="https://i.ibb.co/0y7FWjF1/image.png" alt="QR Code Generator Logo" class="logo">
-            <p class="subtitle">Upload any image and generate a QR code that links directly to your uploaded image</p>
-        </header>
-
+        <img src="https://i.ibb.co/0y7FWjF1/image.png" alt="QR Code Generator" class="logo">
+        <p class="subtitle">Upload an image and generate a QR code for its URL</p>
+        
         <div class="upload-section">
             <label class="upload-box" id="uploadBox">
                 <div class="upload-icon">𓂃🖊</div>
                 <div class="upload-text">Drag & Drop or Click to Upload</div>
-                <div class="upload-subtext">Supports JPG, PNG, GIF, and other image formats</div>
+                <div class="upload-hint">Supports JPG, PNG, GIF (Max 5MB)</div>
+                <div class="file-info" id="fileInfo"></div>
                 <input type="file" id="imageInput" accept="image/*">
             </label>
             
-            <div class="file-info" id="fileInfo"></div>
+            <img id="imagePreview" class="image-preview" alt="Image Preview">
             
-            <div class="button-group">
-                <button id="generateBtn" onclick="uploadAndGenerateQR()">
-                    <span>Generate QR Code</span>
-                </button>
-                <button class="secondary" onclick="resetAll()">
-                    <span>Reset</span>
-                </button>
+            <div class="message" id="message"></div>
+            
+            <button id="generateBtn" class="btn" onclick="uploadAndGenerateQR()">
+                <span class="btn-icon">⚡</span> Generate QR Code
+            </button>
+            
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Uploading image and generating QR code...</p>
             </div>
         </div>
-
-        <div class="loading" id="loading">
-            <div class="spinner"></div>
-            <p>Uploading image and generating QR code...</p>
-        </div>
-
-        <div class="error" id="error"></div>
-
+        
         <div id="qrContainer">
-            <img id="qrCode" src="" alt="QR Code">
-            <div class="qr-info">
-                <p><strong>Image URL:</strong> <a id="imageUrl" href="" target="_blank"></a></p>
-            </div>
-            <div class="button-group">
-                <a id="downloadLink" href="" download="qr-code.png">
-                    <button>
-                        <span>Download QR Code</span>
-                    </button>
-                </a>
-            </div>
+            <h2>Your QR Code</h2>
+            <img id="qrCode" class="qr-code" alt="QR Code">
+            <a id="downloadLink" download="qr-code.png">
+                <button class="btn btn-secondary">
+                    <span class="btn-icon">⬇️</span> Download QR Code
+                </button>
+            </a>
+        </div>
+        
+        <div class="instructions">
+            <h3>How It Works</h3>
+            <ol>
+                <li>Upload an image using the drag & drop area or click to browse</li>
+                <li>Click "Generate QR Code" to upload your image and create a QR code</li>
+                <li>Download your QR code to share with others</li>
+                <li>When someone scans the QR code, they'll be directed to your image</li>
+            </ol>
         </div>
     </div>
-
-    <div class="footer">Made with ❤️ by Armeen | Powered by ImgBB</div>
+    
+    <div class="footer">
+        Made with ❤️ by Armeen
+    </div>
 
     <script>
         const imgbbAPIKey = '1cf8feb97ba0aa50a1ee75cef54488ec';
         const uploadBox = document.getElementById('uploadBox');
         const fileInput = document.getElementById('imageInput');
         const fileInfo = document.getElementById('fileInfo');
+        const imagePreview = document.getElementById('imagePreview');
         const generateBtn = document.getElementById('generateBtn');
-        const loading = document.getElementById('loading');
-        const error = document.getElementById('error');
         const qrContainer = document.getElementById('qrContainer');
         const qrCode = document.getElementById('qrCode');
-        const imageUrl = document.getElementById('imageUrl');
         const downloadLink = document.getElementById('downloadLink');
-
-        // Set initial state
-        generateBtn.disabled = true;
+        const loading = document.getElementById('loading');
+        const message = document.getElementById('message');
 
         // Drag and drop functionality
         uploadBox.addEventListener('dragover', (e) => {
             e.preventDefault();
             uploadBox.classList.add('active');
         });
-
+        
         uploadBox.addEventListener('dragleave', () => {
             uploadBox.classList.remove('active');
         });
-
+        
         uploadBox.addEventListener('drop', (e) => {
             e.preventDefault();
             uploadBox.classList.remove('active');
@@ -380,155 +365,138 @@
             }
         });
 
-        // File input change
+        // File input change handler
         fileInput.addEventListener('change', handleFileSelection);
 
         function handleFileSelection() {
             const file = fileInput.files[0];
             if (!file) return;
             
-            // Check if file is an image
+            // Check file size (max 5MB)
+            if (file.size > 5 * 1024 * 1024) {
+                showMessage('File size exceeds 5MB limit. Please choose a smaller file.', 'error');
+                resetFileInput();
+                return;
+            }
+            
+            // Check file type
             if (!file.type.match('image.*')) {
-                showError('Please select a valid image file (JPG, PNG, GIF, etc.)');
+                showMessage('Please select an image file (JPG, PNG, GIF, etc.)', 'error');
                 resetFileInput();
                 return;
             }
             
-            // Check file size (max 10MB)
-            if (file.size > 10 * 1024 * 1024) {
-                showError('File size too large. Please select an image smaller than 10MB.');
-                resetFileInput();
-                return;
-            }
-            
-            // Display file info
-            const fileSize = (file.size / (1024 * 1024)).toFixed(2);
-            fileInfo.innerHTML = `
-                <strong>Selected file:</strong> ${file.name}<br>
-                <strong>Size:</strong> ${fileSize} MB<br>
-                <strong>Type:</strong> ${file.type}
-            `;
+            // Show file info
+            fileInfo.textContent = `Selected: ${file.name} (${(file.size / 1024).toFixed(1)} KB)`;
             fileInfo.style.display = 'block';
+            
+            // Show image preview
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                imagePreview.src = e.target.result;
+                imagePreview.style.display = 'block';
+            };
+            reader.readAsDataURL(file);
             
             // Enable generate button
             generateBtn.disabled = false;
-            
-            // Hide any previous error
-            hideError();
-            
-            // Hide previous QR code
-            qrContainer.classList.remove('active');
+            hideMessage();
         }
-
+        
         function resetFileInput() {
             fileInput.value = '';
             fileInfo.style.display = 'none';
+            imagePreview.style.display = 'none';
             generateBtn.disabled = true;
         }
-
-        function resetAll() {
-            resetFileInput();
-            hideError();
-            qrContainer.classList.remove('active');
-            uploadBox.classList.remove('active');
-        }
-
-        function showError(message) {
-            error.textContent = message;
-            error.classList.add('active');
-        }
-
-        function hideError() {
-            error.classList.remove('active');
-        }
-
+        
         async function uploadAndGenerateQR() {
             const file = fileInput.files[0];
             if (!file) {
-                showError('Please select an image first!');
+                showMessage('Please select an image first!', 'error');
                 return;
             }
 
-            // Show loading, hide error
-            loading.classList.add('active');
-            hideError();
+            // Show loading state
+            loading.style.display = 'block';
             generateBtn.disabled = true;
-
+            hideMessage();
+            
             try {
                 // Convert file to base64
-                const base64 = await readFileAsBase64(file);
+                const base64 = await fileToBase64(file);
                 
                 // Upload to ImgBB
-                const imageUrlValue = await uploadToImgBB(base64);
+                const formData = new FormData();
+                formData.append('key', imgbbAPIKey);
+                formData.append('image', base64.split(',')[1]);
                 
-                // Generate QR code
-                const qrCodeUrl = await generateQRCode(imageUrlValue);
+                const response = await fetch('https://api.imgbb.com/1/upload', {
+                    method: 'POST',
+                    body: formData
+                });
                 
-                // Display results
-                displayResults(qrCodeUrl, imageUrlValue);
+                const data = await response.json();
                 
+                if (data.success) {
+                    const imageUrl = data.data.url;
+                    
+                    // Generate QR code
+                    QRCode.toDataURL(imageUrl, { 
+                        width: 250, 
+                        margin: 2,
+                        color: {
+                            dark: '#4361ee',
+                            light: '#ffffff'
+                        }
+                    }, (err, qrUrl) => {
+                        if (err) {
+                            console.error(err);
+                            showMessage('Failed to generate QR code. Please try again.', 'error');
+                            return;
+                        }
+                        
+                        // Display QR code
+                        qrCode.src = qrUrl;
+                        downloadLink.href = qrUrl;
+                        qrContainer.style.display = 'block';
+                        
+                        // Show success message
+                        showMessage('QR code generated successfully!', 'success');
+                        
+                        // Scroll to QR code
+                        qrContainer.scrollIntoView({ behavior: 'smooth' });
+                    });
+                } else {
+                    throw new Error(data.error?.message || 'Upload failed');
+                }
             } catch (err) {
                 console.error(err);
-                showError('An error occurred. Please try again.');
+                showMessage('Upload failed. Please try again.', 'error');
             } finally {
-                loading.classList.remove('active');
+                // Hide loading state
+                loading.style.display = 'none';
                 generateBtn.disabled = false;
             }
         }
-
-        function readFileAsBase64(file) {
+        
+        function fileToBase64(file) {
             return new Promise((resolve, reject) => {
                 const reader = new FileReader();
-                reader.onload = () => resolve(reader.result.split(',')[1]);
-                reader.onerror = () => reject(reader.error);
+                reader.onload = () => resolve(reader.result);
+                reader.onerror = error => reject(error);
                 reader.readAsDataURL(file);
             });
         }
-
-        async function uploadToImgBB(base64) {
-            const formData = new FormData();
-            formData.append('key', imgbbAPIKey);
-            formData.append('image', base64);
-
-            const response = await fetch('https://api.imgbb.com/1/upload', {
-                method: 'POST',
-                body: formData
-            });
-
-            const data = await response.json();
-            
-            if (data.success) {
-                return data.data.url;
-            } else {
-                throw new Error(data.error?.message || 'Upload failed');
-            }
+        
+        function showMessage(text, type) {
+            message.textContent = text;
+            message.className = `message ${type}`;
+            message.style.display = 'block';
         }
-
-        function generateQRCode(url) {
-            return new Promise((resolve, reject) => {
-                QRCode.toDataURL(url, { 
-                    width: 300,
-                    margin: 2,
-                    color: {
-                        dark: '#4361ee',
-                        light: '#ffffff'
-                    }
-                }, (err, qrUrl) => {
-                    if (err) reject(err);
-                    else resolve(qrUrl);
-                });
-            });
-        }
-
-        function displayResults(qrCodeUrl, imageUrlValue) {
-            qrCode.src = qrCodeUrl;
-            imageUrl.href = imageUrlValue;
-            imageUrl.textContent = imageUrlValue;
-            downloadLink.href = qrCodeUrl;
-            qrContainer.classList.add('active');
-            
-            // Scroll to QR code
-            qrContainer.scrollIntoView({ behavior: 'smooth' });
+        
+        function hideMessage() {
+            message.style.display = 'none';
         }
     </script>
 </body>
